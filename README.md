@@ -1,10 +1,11 @@
 # QuickTunnel
+## 🖊 项目简介
 众所周知现在ssh是最广泛使用的远程连接协议
 
 但这个东西有个最大的缺点 基于TCP 导致他只要遇到丢包就卡死
 
 所以我突发奇想啊 用魔改的Hysteria2来做类似的远程连接隧道可不可以呢
-
+## ？ 如何使用
 于是我发现你只要在服务端写一个
 ```toml
 [quicktunnel]
@@ -15,9 +16,11 @@ port=59
 
 客户端连接只需要用
 ```bash
-qt 用户名@目标主机IP 密码或 -p 密钥路径
+qt 用户名@目标主机IP 密码
 ```
-
+## ⛰ 实现方法
 什么你说Hysteria2默认用Brutal怎么办
 
-quicktunnel把Brutal给蒯了变成了BBR 也就是一个开了ignoreclientbandwidth并且客户端不设置上下的Hysteria2节点
+quicktunnel默认是一个用BBR流控的Hysteria2协议 Brutal需要额外指定上下行 但不排除在未来的版本中加回来的可能
+## ⚖️ 条款和授权
+QuickTunnel使用MoPL授权 <https://867678.xyz/doc/MoPL/>

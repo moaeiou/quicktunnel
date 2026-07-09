@@ -1,4 +1,4 @@
-# QuickTunnel
+# QCSH 全称QUIC Shell
 ## 🖊 项目简介
 众所周知现在ssh是最广泛使用的远程连接协议
 
@@ -8,7 +8,7 @@
 ## ？ 如何使用
 于是我发现你只要在服务端写一个
 ```toml
-[quicktunnel]
+[qcsh]
 listen="0.0.0.0"
 port=59
 ```
@@ -21,6 +21,6 @@ qt 用户名@目标主机IP 密码
 ## ⛰ 实现方法
 什么你说Hysteria2默认用Brutal怎么办
 
-quicktunnel默认是一个用BBR流控的Hysteria2协议 Brutal需要额外指定上下行 但不排除在未来的版本中加回来的可能
+QCSH默认是一个用BBR流控的Hysteria2协议 Brutal需要额外指定上下行 但不排除在未来的版本中加回来的可能
 ## ⚖️ 条款和授权
-QuickTunnel使用MoPL授权 <https://867678.xyz/doc/MoPL/>
+QCSH使用MoPL授权 <https://867678.xyz/doc/MoPL>

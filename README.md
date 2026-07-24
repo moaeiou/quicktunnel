@@ -1,26 +1,36 @@
-# QCSH 全称QUIC Shell
-## 🖊 项目简介
-众所周知现在ssh是最广泛使用的远程连接协议
+# QCSH (QUICShell)
+## 🖊 Intro
+SSH is the most widely used remote connection protocol today.
 
-但这个东西有个最大的缺点 基于TCP 导致他只要遇到丢包就卡死
+But he was founded 30 years ago.
 
-所以我突发奇想啊 用魔改的Hysteria2来做类似的远程连接隧道可不可以呢
-## ？ 如何使用
-于是我发现你只要在服务端写一个
+From today's perspective, he should have been eliminated long ago.
+
+So QCSH is a protocol that can eliminate SSH and is based on [Hysteria2](https://github.com/apernet/hysteria).
+## 🚀 Features
+- **So Fast**: No three-way handshake, no four-way wave.
+- **Easy to use**: You only need to download its binary file and supplement it with a configuration file to start.
+- **Open Source**: Under the MoPL, it is free software.
+- **Every Free**: No charge, always free.
+- **Support Most platforms**: Linux, macOS, Windows, Plan9, ... Every Golang supports platforms theoretically all support QCSH.
+## ？ How to use
+Just need some `toml` config file
+
+Default port `59`
 ```toml
 [qcsh]
 listen="0.0.0.0"
 port=59
 ```
-就这么简单就可以跑起来了
+Yes, it is. Very simple!
 
-客户端连接只需要用
+And if you need connect server?
 ```bash
-qt 用户名@目标主机IP 密码
+qcsh username@IP "password"
 ```
-## ⛰ 实现方法
-什么你说Hysteria2默认用Brutal怎么办
-
-QCSH默认是一个用BBR流控的Hysteria2协议 Brutal需要额外指定上下行 但不排除在未来的版本中加回来的可能
-## ⚖️ 条款和授权
-QCSH使用MoPL授权 <https://867678.xyz/doc/MoPL>
+Options
+```bash
+qcsh username@IP "password" -k "/path/to/private.key" -c "/path/to/configfile.toml" 
+```
+## ⚖️ LICENSE
+QCSH under the [MoPL](https://867678.xyz/doc/MoPL)
